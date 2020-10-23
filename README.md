@@ -1,15 +1,13 @@
 # 10-headers-2-authentifications
 ### Requests and responses
-1. 
-2. 
-3.
-4.
-5.
-6.
-7.
-8.
-9.
-10.
+1. *joyreactor.cc* увидел заголовок Vary: Accept-Encoding. Прочитал, что он отвечает за то, что сжатые ресурсы gzip будут приняты клиентом.
+2. *spy-soft.net* в одном из заголовков попался cf-cache-status: DYNAMIC. Не совсем понял, что он означает, думаю, что он отвечает за сохрание сайта в кеше, а чтобы это происходило, нужно: cf-cache-status: HIT.
+3. *proglib.io* интересный заголовок x-frame-options: DENY, который отвечает за то, чтобы не было кнопок поверх кнопок.
+4. *stackoverflow.com* via: 1.1 varnish, реверс-прокси, который нужен для балансировки и кеширования. Не понял, как он работает.
+5. *www.cyberforum.ru*, а здесь x-frame-options: SAMEORIGIN.
+6. На *miro.com* увидел x-xss-protection: 1; mode=block. Почему то сайт заблокировал простой запрос, это же не атака.
+7. На *bb.dvfu.ru* много странных заголовков, смысл которых я не совсем понимаю: X-Blackboard-product: Blackboard Learn ™ 9.1.201404.160205 , X-Blackboard-appserver: SRVBBAPP01.dvfu.ru , Xythos.LoggedInWithCredentials: false.
+8. *sovietgames.su* какой-то заголовок cf-ray сервиса CloudFlare, видимо проверка на "робота".
 ### Social authentifications
 *1) joyreactor.cc* Используется http, но при этом в запросе не были зашифрованы логин и пароль. Так же отправляется csrf token, который, как я понял, нужен для защиты от ботов.
 
